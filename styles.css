@@ -3,7 +3,7 @@
 #navbar {
 	font-family: "Sofia Sans Condensed", sans-serif;
 	background-color: rgba(53, 53, 53, 0.7);
-	height: 3.5rem;
+	min-height: 3.5rem;
 	color: white;
 	padding: 0.5rem 0;
 	position: fixed;
@@ -13,6 +13,7 @@
 	justify-content: center;
 	align-items: center;
 	column-gap: 2rem;
+	flex-wrap: wrap;
 }
 
 #navbar .logo {
@@ -59,13 +60,15 @@
 
 #landing {
 	height: 100dvh;
-	background: no-repeat center/100%
+	background: no-repeat center/cover
 		url(images/andrea-donato-MNu0n-3BIKs-unsplash.jpg);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	color: white;
+	width: 100%;
+	position: relative;
 }
 
 #landing .content {
@@ -121,5 +124,40 @@
 
 	#navbar .media-icon {
 		width: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	#navbar {
+		row-gap: 10px;
+	}
+
+	#navbar .logo span {
+		font-size: 25px;
+	}
+
+	#navbar .logo {
+		flex-basis: 100%;
+		justify-content: center;
+	}
+	.content h1 {
+		font-family: "IBM Plex Serif", serif;
+		font-weight: 200;
+		font-size: 1.4rem;
+	}
+
+	.content h2 {
+		font-family: "Roboto", sans-serif;
+		font-size: 4rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.content h1 {
+		font-size: 1.2rem;
+	}
+
+	.content h2 {
+		font-size: 3rem;
 	}
 }
